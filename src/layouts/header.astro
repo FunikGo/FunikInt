@@ -2,24 +2,24 @@
 ---
 
 <!-- Clean 2-Part Header -->
-<div class="px-[5%] relative">
+<div class="px-[5%] relative z-1000">
     <!-- Main Header - 2 Part Only (Left: Logo | Right: Nav+Actions) -->
-    <header id="mainHeader" class="fixed backdrop-blur-md top-[-80px] left-[5%] right-[5%] z-1 bg-white/40 border border-gray-100 shadow-md rounded-lg transition-all duration-300">
+    <header id="mainHeader" class="fixed backdrop-blur-md text-black top-[20px] left-[5%] right-[5%] z-1 bg-white/20 border border-white/20 shadow-md rounded-lg transition-all duration-300">
         <div class="px-5 py-5 ">
             <div class="flex items-center justify-between">
                 
                 <!-- Left: Logo Only -->
                 <a href="#" class="flex items-center gap-2">
-                    <h1 class="text-lg font-semibold text-gray-900">FunikIn</h1>
+                    <h1 class="text-lg font-semibold font-TanGrandeur">FunikIn</h1>
                 </a>
 
                 <!-- Right: Nav + Actions -->
                 <div class="flex items-center gap-4">
                     <!-- Navigation -->
                     <nav class="hidden md:flex items-center gap-6">
-                        <a href="#home" class="text-sm font-medium text-gray-700 hover:text-sky-600 px-2 py-1 rounded hover:bg-sky-50/50 transition-colors duration-200">Home</a>
-                        <a href="#news" class="text-sm font-medium text-gray-700 hover:text-sky-600 px-2 py-1 rounded hover:bg-sky-50/50 transition-colors duration-200">News</a>
-                        <a href="#articles" class="text-sm font-medium text-gray-700 hover:text-sky-600 px-2 py-1 rounded hover:bg-sky-50/50 transition-colors duration-200">Articles</a>
+                        <a href="#home" class="text-sm font-medium hover:text-sky-600 px-2 py-1 rounded hover:bg-sky-50/50 transition-colors duration-200">Home</a>
+                        <a href="#news" class="text-sm font-medium hover:text-sky-600 px-2 py-1 rounded hover:bg-sky-50/50 transition-colors duration-200">News</a>
+                        <a href="#articles" class="text-sm font-medium hover:text-sky-600 px-2 py-1 rounded hover:bg-sky-50/50 transition-colors duration-200">Articles</a>
                     </nav>
                     
                     <!-- Login Button -->
@@ -38,26 +38,39 @@
 </div>
 
 <style>
+    @font-face {
+    font-family: 'TanGrandeur';
+    src: url('../assets/') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    }
     html {
         scroll-behavior: smooth;
     }
    
 </style>
 
-<script>
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
     let lastScrollY = window.scrollY;
     
-    // Header scroll behavior
+    const header = document.querySelector('header');
+
+    let scrollTimer;
+
     window.addEventListener('scroll', () => {
-        const header = document.getElementById('mainHeader');
-        const scrollY = window.scrollY;
-        
-        if (scrollY > 10) {
-            header.style.top = '20px';
-        } else {
-            header.style.top = '-100px';
-        }
+    // sembunyikan header saat scroll
+    header.style.top = '-100px';
+
+    // reset timer setiap scroll terjadi
+    clearTimeout(scrollTimer);
+
+    // jika scroll berhenti
+    scrollTimer = setTimeout(() => {
+        header.style.top = '20px';
+    }, 150); // delay berhenti scroll
     });
+
     
     // Login button functionality
     document.getElementById('loginBtn').addEventListener('click', () => {
@@ -91,4 +104,5 @@
             }
         });
     });
+});
 </script>

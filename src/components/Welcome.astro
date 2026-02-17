@@ -1,14 +1,18 @@
-<div class="z-1 h-[100vh] flex flex-col justify-center items-center text-center gap-6 px-4">
-    <h1 class="fixed text-[2rem] font-bold max-w-[30rem] top-[30%] transition-all duration-[0.5s]" id="HeadText">
-        Celebrating Excellence,
-        Inspiring the Future
-    </h1>
-    <p id="SubText" class="fixed min-w-[40%] max-w-[40rem] top-[50%] transition-all duration-[0.8s]">
-        A platform dedicated to showcasing outstanding achievements, remarkable milestones, and the stories behind every success.
-    </p>
+<div class="relative h-screen w-full z-[1]">
+    <div class="fixed h-[100vh] w-full text-white bg-gradient-to-b from-green-400 to-green-950 flex flex-col text-center justify-center items-center gap-4 px-4">
+        <h1 id="HeadText" class="z-10 w-full text-stroke-2 text-stroke-black max-w-[50%] text-4xl md:text-6xl font-bold drop-shadow-lg absolute top-[30%] transition-all duration-500">
+            Celebrating Excellence, Inspiring the Future
+        </h1>
+        <p id="SubText" class="w-full max-w-[50%] text-lg md:text-2xl  absolute top-[42%] transition-all duration-500">
+            A platform dedicated to showcasing outstanding achievements, remarkable milestones, and the stories behind every success.        
+        </p>
+        s
+    </div>
+    
 </div>
-<div class="z-20 bg-sky-200 h-[100vh] flex flex-col justify-center gap-6 px-4">
 
+<div class="z-[20] relative bg-white shadow-lg h-[100vh] flex flex-col justify-center gap-6 px-4">
+ss
 </div>
 
 
@@ -19,34 +23,29 @@
     html {
         scroll-behavior: smooth;
     }
-   
+   #HeadText, #SubText {
+    transition: top 0.1s linear;
+}
+
 </style>
-<script>
-     let lastScrollY = window.scrollY;
-    
-    // Header scroll behavior
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
-        const HeadText = document.getElementById('HeadText');
-        const SubText = document.getElementById('SubText');
-        const scrollY = window.scrollY;
-        
-        if (scrollY > 80) {
-            HeadText.style.top = '-50%';
-            HeadText.style.transitionDelay = '0.1s';
+    const HeadText = document.getElementById('HeadText');
+    const SubText = document.getElementById('SubText');
 
-        } else if(scrollY > 40) {
-             HeadText.style.top = '20%';
-        }else {
-            HeadText.style.top = '30%';
-            HeadText.style.transitionDelay = '0.2s';
-        }
-        if (scrollY > 80) {
-            SubText.style.top = '-50%';
-            SubText.style.transitionDelay = '0.2s';
-        } else {
-            SubText.style.top = '42%';
-            SubText.style.transitionDelay = '0.1s';
+    if (!HeadText || !SubText) return;
 
-        }
-    });
+    const scrollY = window.scrollY;
+
+    // atur sensitivitas gerakan
+    const headMove = scrollY * 0.03;
+    const subMove = scrollY * 0.02;
+
+    // posisi dasar (biar ga mulai dari 0)
+    HeadText.style.top = 30 + headMove + '%';
+    SubText.style.top = 45 + subMove + '%';
+});
+
+});
 </script>
