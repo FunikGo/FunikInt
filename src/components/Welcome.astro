@@ -1,10 +1,24 @@
-<div class="relative h-screen w-full z-[1]">
+<div class="relative h-screen w-full z-[10]">
     <div class="fixed h-[100vh] w-full text-white bg-gradient-to-b from-green-400 to-green-950 flex flex-col text-center justify-center items-center gap-4 px-4">
-        <h2 id="SpanUpHomeText" class="absolute top-[-2%]">Paket Promo</h2>
-        <h1 id="HeadText" class="font-[TanGrandeur] z-10 w-full max-w-[60%] leading-[1.65] tracking-[0.04em] text-4xl md:text-6xl font-bold drop-shadow-lg absolute top-[30%] transition-all duration-500">
+        <div id="SpanUpHomeText" class="z-[2] absolute top-[-10%]">
+            <span class="text-md tracking-[0.2em] uppercase font-medium text-green-200">
+                FOLLOW US ON
+            </span>
+            <div class="flex items-center gap-4 mt-2 justify-center">
+                <a href="#">
+                    <i class="bx bxl-instagram-alt bg-white rounded-full p-2 text-green-700 transition duration-200 hover:scale-120"></i>
+                </a>
+                <a href="#">
+                    <i class="bx bxl-tiktok bg-white rounded-full p-2 text-green-700 transition duration-200 hover:scale-120"></i>
+                </a><a href="#">
+                    <i class="bx bxl-linkedin bg-white rounded-full p-2 text-green-700 transition duration-200 hover:scale-120"></i>
+                </a>
+            </div>
+        </div>
+        <h1 id="HeadText" class="font-[TanGrandeur] z-2 w-full max-w-[90%] md:max-w-[60%] leading-[1.65] tracking-[0.04em] text-2xl md:text-6xl font-bold drop-shadow-lg absolute top-[30%] transition-all duration-500">
             Celebrating Excellence, Inspiring the Future.
         </h1>
-        <p id="SubText" class="italic w-full max-w-[50%] text-lg md:text-xl drop-shadow-md absolute top-[54%] transition-all duration-500">
+        <p id="SubText" class="hiddsen italic w-full max-w-[50%] text-lg md:text-xl drop-shadow-md absolute top-[54%] transition-all duration-500">
             A platform dedicated to showcasing outstanding achievements, remarkable milestones, and the stories behind every success.        
         </p>
         
@@ -12,15 +26,48 @@
     
 </div>
 
-<div id="pageTwo" class="z-[20] rounded-t-[10%] relative bg-white shadow-lg h-[100vh] flex flex-col justify-center gap-6 px-4">
-ss
-</div>
+<section id="pageTwo" class="z-[20] py-[7%] px-[10%] rounded-t-[10%] relative bg-white shadow-lg min-h-[100vh] flex flex-col gap-6 px-4">
+
+    <!--  -->
+    <div class="overflow-x-auto whitespace-nowrap rounded-xl select-none">
+        <div class="gap-6 flex space-x-4">
+            <div class="bg-gray-100 rounded-lg p-4 shadow-md max-w-md">
+                <img src="https://source.unsplash.com/random/400x200" alt="News Image" class="w-full h-40 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold mb-2">Pameran Seni Lampung</h3>
+                <p class="text-gray-700 truncate">Lorem ipsum dolor siur adipiscing elit. Donec vel sapien augue.</p>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-4 shadow-md max-w-md">
+                <img src="https://source.unsplash.com/random/400x200" alt="News Image" class="w-full h-40 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold mb-2">News Title 1</h3>
+                <p class="text-gray-700 truncate">Lorem ipsum dolor siur adipiscing elit. Donec vel sapien augue.</p>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-4 shadow-md max-w-md">
+                <img src="https://source.unsplash.com/random/400x200" alt="News Image" class="w-full h-40 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold mb-2">News Title 1</h3>
+                <p class="text-gray-700 truncate">Lorem ipsum dolor siur adipiscing elit. Donec vel sapien augue.</p>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-4 shadow-md max-w-md">
+                <img src="https://source.unsplash.com/random/400x200" alt="News Image" class="w-full h-40 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold mb-2">News Title 1</h3>
+                <p class="text-gray-700 truncate">Lorem ipsum dolor siur adipiscing elit. Donec vel sapien augue.</p>
+            </div>
+            <div class="bg-gray-100 rounded-lg p-4 shadow-md max-w-md">
+                <img src="https://source.unsplash.com/random/400x200" alt="News Image" class="w-full h-40 object-cover rounded-md mb-4">
+                <h3 class="text-xl font-semibold mb-2">News Title 1</h3>
+                <p class="text-gray-700 truncate">Lorem ipsum dolor siur adipiscing elit. Donec vel sapien augue.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
 
 
 <style>
+    ::-webkit-scrollbar{
+		display: none;
+	}
     html {
         scroll-behavior: smooth;
     }
@@ -62,15 +109,18 @@ function updateAnimation() {
     const headMove = latestScrollY * 0.03;
     const subMove = latestScrollY * 0.02;
 
-    SpanUpHomeText.style.top = -5 + headMove + '%';
+    SpanUpHomeText.style.top = -10 + headMove + '%';
     HeadText.style.top = 30 + headMove + '%';
+    HeadText.style.scale = 1 - (headMove / 100); // Scale up as text moves down
     SubText.style.top = 54 + subMove + '%';
+    SubText.style.scale = 1 - (subMove / 80); // Scale down as text moves down
+
 
     ticking = false;
 }
 
 
-const maxRadius = 50;
+const maxRadius = 45;
 let currentRadius = maxRadius;
 let targetRadius = maxRadius;
 
