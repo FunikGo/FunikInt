@@ -31,29 +31,44 @@ ss
 #pageTwo {
     will-change: border-radius;
 }
+#SpanUpHomeText,
+#HeadText,
+#SubText {
+    will-change: top;
+}
 
 </style>
 <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
-    window.addEventListener('scroll', () => {
-    const SpanUpHomeText = document.getElementById('SpanUpHomeText');
-    const HeadText = document.getElementById('HeadText');
-    const SubText = document.getElementById('SubText');
-    // 
-    if (!SpanUpHomeText || !HeadText || !SubText || !pageTwo) return;
+const SpanUpHomeText = document.getElementById('SpanUpHomeText');
+const HeadText = document.getElementById('HeadText');
+const SubText = document.getElementById('SubText');
 
-    const scrollY = window.scrollY;
+if (!SpanUpHomeText || !HeadText || !SubText || !pageTwo) return;
 
-    // atur sensitivitas gerakan
-    const headMove = scrollY * 0.03;
-    const subMove = scrollY * 0.02;
+let latestScrollY = 0;
+let ticking = false;
 
-    // posisi dasar (biar ga mulai dari 0)
-    SpanUpHomeText.style.top = -5 + headMove * 1 + '%';
+window.addEventListener('scroll', () => {
+    latestScrollY = window.scrollY;
+
+    if (!ticking) {
+        requestAnimationFrame(updateAnimation);
+        ticking = true;
+    }
+});
+
+function updateAnimation() {
+    const headMove = latestScrollY * 0.03;
+    const subMove = latestScrollY * 0.02;
+
+    SpanUpHomeText.style.top = -5 + headMove + '%';
     HeadText.style.top = 30 + headMove + '%';
     SubText.style.top = 54 + subMove + '%';
-    
-});
+
+    ticking = false;
+}
+
 
 const maxRadius = 50;
 let currentRadius = maxRadius;
