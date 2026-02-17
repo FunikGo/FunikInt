@@ -1,0 +1,52 @@
+<div class="z-1 h-[100vh] flex flex-col justify-center items-center text-center gap-6 px-4">
+    <h1 class="fixed text-[2rem] font-bold max-w-[30rem] top-[30%] transition-all duration-[0.5s]" id="HeadText">
+        Celebrating Excellence,
+        Inspiring the Future
+    </h1>
+    <p id="SubText" class="fixed min-w-[40%] max-w-[40rem] top-[50%] transition-all duration-[0.8s]">
+        A platform dedicated to showcasing outstanding achievements, remarkable milestones, and the stories behind every success.
+    </p>
+</div>
+<div class="z-20 bg-sky-200 h-[100vh] flex flex-col justify-center gap-6 px-4">
+
+</div>
+
+
+
+
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+   
+</style>
+<script>
+     let lastScrollY = window.scrollY;
+    
+    // Header scroll behavior
+    window.addEventListener('scroll', () => {
+        const HeadText = document.getElementById('HeadText');
+        const SubText = document.getElementById('SubText');
+        const scrollY = window.scrollY;
+        
+        if (scrollY > 80) {
+            HeadText.style.top = '-50%';
+            HeadText.style.transitionDelay = '0.1s';
+
+        } else if(scrollY > 40) {
+             HeadText.style.top = '20%';
+        }else {
+            HeadText.style.top = '30%';
+            HeadText.style.transitionDelay = '0.2s';
+        }
+        if (scrollY > 80) {
+            SubText.style.top = '-50%';
+            SubText.style.transitionDelay = '0.2s';
+        } else {
+            SubText.style.top = '42%';
+            SubText.style.transitionDelay = '0.1s';
+
+        }
+    });
+</script>

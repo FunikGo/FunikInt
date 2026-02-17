@@ -1,21 +1,94 @@
-<div class="py-[5vh] flex flex-col gap-5">
-    <div class="shadow-lg outline outline-[0.4px] outline-gray-300 rounded w-full min-h-[4vh] p-5 flex justify-between items-center">
-        <div class="">
-            <a href="#">FunikIn</a>
-        </div>
-        <div class="flex gap-10 text-xs items-center">
-            <a href="#">Home
-            <a href="#">News</a>
-            <a href="#">Article</a>
-            <div class="">
-                <button class="outline p-2 rounded px-4">Login</button>
+---
+---
+
+<!-- Clean 2-Part Header -->
+<div class="px-[5%] relative">
+    <!-- Main Header - 2 Part Only (Left: Logo | Right: Nav+Actions) -->
+    <header id="mainHeader" class="fixed backdrop-blur-md top-[-80px] left-[5%] right-[5%] z-1 bg-white/40 border border-gray-100 shadow-md rounded-lg transition-all duration-300">
+        <div class="px-5 py-5 ">
+            <div class="flex items-center justify-between">
+                
+                <!-- Left: Logo Only -->
+                <a href="#" class="flex items-center gap-2">
+                    <h1 class="text-lg font-semibold text-gray-900">FunikIn</h1>
+                </a>
+
+                <!-- Right: Nav + Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Navigation -->
+                    <nav class="hidden md:flex items-center gap-6">
+                        <a href="#home" class="text-sm font-medium text-gray-700 hover:text-sky-600 px-2 py-1 rounded hover:bg-sky-50/50 transition-colors duration-200">Home</a>
+                        <a href="#news" class="text-sm font-medium text-gray-700 hover:text-sky-600 px-2 py-1 rounded hover:bg-sky-50/50 transition-colors duration-200">News</a>
+                        <a href="#articles" class="text-sm font-medium text-gray-700 hover:text-sky-600 px-2 py-1 rounded hover:bg-sky-50/50 transition-colors duration-200">Articles</a>
+                    </nav>
+                    
+                    <!-- Login Button -->
+                    <button id="loginBtn" class="px-4 py-2 text-xs font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors duration-200 whitespace-nowrap">
+                        Sign In
+                    </button>
+                    
+                    <!-- Mobile Menu -->
+                    <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg text-gray-700 hover:bg-gray-100">
+                        <i class="bx bx-menu text-lg"></i>
+                    </button>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="w-full h-fit flex justify-center items-center">
-        <div class="flex w-fit">
-        <input type="text" class="outline outline-gray-400  p-2 rounded shadow-lg min-w-[40%] max-w-[60vh]">
-
-        </div>
-    </div>
+    </header>
 </div>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+   
+</style>
+
+<script>
+    let lastScrollY = window.scrollY;
+    
+    // Header scroll behavior
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('mainHeader');
+        const scrollY = window.scrollY;
+        
+        if (scrollY > 10) {
+            header.style.top = '20px';
+        } else {
+            header.style.top = '-100px';
+        }
+    });
+    
+    // Login button functionality
+    document.getElementById('loginBtn').addEventListener('click', () => {
+        alert('Login modal will open!');
+        // Ganti dengan modal/login logic kamu
+        console.log('Login clicked');
+    });
+    
+    // Mobile menu functionality
+    document.getElementById('mobileMenuBtn').addEventListener('click', () => {
+        // Toggle mobile menu
+        console.log('Mobile menu toggled');
+        alert('Mobile menu opened!');
+    });
+    
+    
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerHeight = 120;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
