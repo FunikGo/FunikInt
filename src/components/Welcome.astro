@@ -1,3 +1,9 @@
+---
+import { Image } from 'astro:assets';
+---
+
+
+
 <div class="relative h-[40vh] md:h-[50vh] lg:h-[60vh] xl:h-full w-full z-[10]">
     <div class="fixed h-[40vh] md:h-[50vh] lg:h-[60vh] xl:h-full w-full text-white bg-gradient-to-b from-green-400 to-green-950 flex flex-col text-center justify-center items-center gap-4 px-4">
         <div id="SpanUpHomeText" class="z-[2] absolute top-[-20%]">
@@ -21,41 +27,96 @@
         <p id="SubText" class="hiddsen italic w-full max-w-[90%] md:max-w-[60%] text-lg md:text-xl drop-shadow-md absolute top-[54%] transition-all duration-500">
             A platform dedicated to showcasing outstanding achievements, remarkable milestones, and the stories behind every success.        
         </p>
-        
+        <div id="footer" class="absolute bottom-[-20rem] text-green-950 bg-white w-full min-h-[12vh] flex justify-between items-center px-4">
+            <div class="w-full flex flex-col items-start">
+                <h1 class="font-bold text-green-900 text-sm md:text-md lg:text-lg xl:text-xl font-[TanGrandeur]">FunikIn</h1>
+                <span class="text-xs text-white p-1 bg-gradient-to-r from-green-400 to-green-700">Create With <i class="bx bxs-heart text-white"></i> | Copyright 2026</span>
+            </div>
+            <div class="w-full flex items-center justify-center">
+                <div class="w-fit text-xs p-1 flex gap-2 bg-green-400/20 outline outline-green-200">
+                <a href="#" class="bg-green-400 p-1 px-4 text-white ">
+                    About Us
+                </a>
+                <a href="#" class="bg-green-400 p-1 px-4 text-white ">
+                    Promotions
+                </a>
+                <a href="#" class="bg-green-400 p-1 px-4 text-white ">
+                    News
+                </a>
+                </div>
+            </div>
+            <div class="w-full">
+
+            </div>
+        </div>
     </div>
     
 </div>
 
-<section id="pageTwo" class="z-[20] py-[7%] px-[10%] rounded-t-[10%] relative bg-white shadow-lg min-h-[100vh] flex flex-col gap-6 px-4">
-    <div class="w-full flex flex-col gap-15 items-center text-center justify-center">
+<section id="pageTwo" class="relative py-[7%] z-[20] px-[10%] rounded-t-[10%] relative bg-green-100 shadow-lg min-h-[100vh] flex flex-col gap-6 px-4">
+    <div class="w-full relative pt-[7%] flex flex-col gap-15 items-center text-center justify-center bg-white shadow-lg rounded-lg">
         <div class="flex flex-col gap-2 items-center text-center max-w-[60rem] ">
-            <h1 class="px-2 text-2xl">Kenapa Memilih <span class="italic px-2 bg-green-400 text-white">FunikIn</span></h1>
-            <p class="text-black/60">
+            <h1 class="px-2 text-2xl font-bold text-green-900">Kenapa Memilih <span class="italic px-2 bg-green-400 text-white">FunikIn</span></h1>
+            <p class="text-black/60 w-80% max-w-[40rem]">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quisquam. Illum id reiciendis, deserunt iste illo temporibus nam dolore quas eveniet, eos doloribus minus nesciunt iure, veritatis labore molestiae dolorum.
             </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex jusitfy-center gap-3">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex jusitfy-center gap-3 shadow-lg rounded-lg p-4">
             <div class="max-w-[40rem] flex flex-col items-center gap-3">
-                <i class="bx bx-globe text-5xl"></i>
-                <h2 class="text-lg bg-green-400 px-2 text-white w-fit font-semibold">Publish Pencapaianmu</h2>
+                <i class="bx bx-globe text-5xl text-green-700"></i>
+                <h2 class="text-lg bg-gradient-to-t from-green-400 to-green-600 px-2 text-white w-fit font-semibold">Publish Pencapaianmu</h2>
                 <p class="text-black/50 text-sm">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi error minus quam repellendus tempore dignissimos, commodi, beatae explicabo rerum delectus natus! Numquam vel obcaecati nostrum blanditiis quasi asperiores ea explicabo.
                 </p>
             </div>
             <div class="max-w-[40rem] flex flex-col items-center gap-3">
-                <i class="bx bx-trending-up text-5xl"></i>
-                <h2 class="text-lg bg-green-400 px-2 text-white w-fit font-semibold">Lebih Banyak Dikenal</h2>
+                <i class="bx bx-trending-up text-5xl text-green-700"></i>
+                <h2 class="text-lg bg-gradient-to-t from-green-400 to-green-600 px-2 text-white w-fit font-semibold">Lebih Banyak Dikenal</h2>
                 <p class="text-black/50 text-sm">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi error minus quam repellendus tempore dignissimos, commodi, beatae explicabo rerum delectus natus! Numquam vel obcaecati nostrum blanditiis quasi asperiores ea explicabo.
                 </p>
             </div>
             <div class="max-w-[40rem] flex flex-col items-center gap-3">
-                <i class="bx bx-history text-5xl"></i>
-                <h2 class="text-lg bg-green-400 px-2 text-white w-fit font-semibold">Abadikan Pencapaianmu</h2>
+                <i class="bx bx-history text-5xl text-green-700"></i>
+                <h2 class="text-lg bg-gradient-to-t from-green-400 to-green-600 px-2 text-white w-fit font-semibold">Abadikan Pencapaianmu</h2>
                 <p class="text-black/50 text-sm">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi error minus quam repellendus tempore dignissimos, commodi, beatae explicabo rerum delectus natus! Numquam vel obcaecati nostrum blanditiis quasi asperiores ea explicabo.
                 </p>
             </div>
+        </div>
+        <div class="z-[12] w-full h-fit flex justify-center rounded-md p-4">
+            <div class="p-5 rounded-xl flex flex-col gap-10 items-center text-center w-fit max-w-[60rem] bg-white shadow-xl outline outline-white/60 backdrop-blur-sm bg-white/30">
+                <div class=" text-green-900">
+                    <h1 class="font-bold text-2xl">BAGAIMANA KAMI BEKERJA <span class="bg-green-400 px-3 text-white">?</span></h1>
+                    <span class="opacity-50 text-sm">Dengan UI Minimalis Memungkinkan Pengguna Gampang Beradaptasi</span>
+                </div>
+                <div class="flex items-center gap-4 text-xs md:text-sm lg:text-base p-2 outline outline-white/60 rounded-lg shadow-lg backdrop-blur-sm bg-white/20">
+                    <div class="p-2 px-5 outline text-green-700 rounded font-medium transition duration-200">
+                        Daftar
+                    </div>
+                    <i class="bx bx-right-arrow-alt text-green-700"></i>
+                    <div class="p-2 px-5 outline text-green-700 rounded font-medium transition duration-200">
+                        <span>Ajukan Prestasi</span>
+                    </div>
+                    <i class="bx bx-right-arrow-alt text-green-700"></i>
+                    <div class="p-2 px-5 outline text-green-700 rounded font-medium transition duration-200">
+                        <span>Verifikasi Prestasi</span>
+                    </div>
+                    <i class="bx bx-right-arrow-alt text-green-700"></i>
+                    <div class="p-2 px-5 bg-gradient-to-r from-green-400 to-green-600 text-white rounded font-medium transition duration-200">
+                        <span>Publish</span>
+                        <i class="bx bxs-badge-check"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="relative z-[1] pt-[7rem] rounded-2xl flex flex-col items-center w-full min-h-[30rem] bg-gradient-to-b from-green-400 to-green-700 relative mt-[-10rem]">
+           <h1 id="FunikInOverlay" class="relative z-[9] text-5xl font-bold text-white font-[TanGrandeur] top-[10px]">FUNIKIN</h1>
+        </div>
+        <div class="z-[3] relative w-full">
+            <img id="overlayHutan1" src="/public/image/Hutan.png" class="z-[10] absolute bottom-[44rem] w-full opacity-20" alt="Hutan">
+            <img id="overlayHutan2" src="/public/image/Hutan.png" class="z-[8] absolute bottom-[44rem] w-full " alt="Hutan">
+            <div class="z-[11] relative w-full bg-white h-[45rem] mt-[-14rem] rounded-b-lg"></div>
         </div>
     </div>
     <!--  -->
@@ -68,12 +129,12 @@
             </div>
         </div>
     </div> -->
+    <!--  -->
+    
 </section>
+<div class="h-screen"></div>
 
-
-
-
-
+<!--  -->
 <style>
     ::-webkit-scrollbar{
 		display: none;
@@ -93,64 +154,110 @@
 #SubText {
     will-change: top;
 }
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  transform: translateY(100%);
+  transition: transform 0.4s ease;
+}
 
 </style>
 <script is:inline>
-    document.addEventListener('DOMContentLoaded', () => {
-const SpanUpHomeText = document.getElementById('SpanUpHomeText');
-const HeadText = document.getElementById('HeadText');
-const SubText = document.getElementById('SubText');
+document.addEventListener("DOMContentLoaded", () => {
+  const $ = (id) => document.getElementById(id);
 
-if (!SpanUpHomeText || !HeadText || !SubText || !pageTwo) return;
+  const SpanUpHomeText = $("SpanUpHomeText");
+  const HeadText = $("HeadText");
+  const SubText = $("SubText");
+  const overlayHutan1 = $("overlayHutan1");
+  const overlayHutan2 = $("overlayHutan2");
+  const FunikInOverlay = $("FunikInOverlay");
+  const footer = $("footer");
+  const pageTwo = $("pageTwo");
 
-let latestScrollY = 0;
-let ticking = false;
+  if (
+    !SpanUpHomeText ||
+    !HeadText ||
+    !SubText ||
+    !overlayHutan1 ||
+    !overlayHutan2 ||
+    !FunikInOverlay ||
+    !footer ||
+    !pageTwo
+  )
+    return;
 
-window.addEventListener('scroll', () => {
+  let latestScrollY = 0;
+  let ticking = false;
+
+  const maxRadius = 45;
+  let currentRadius = maxRadius;
+  let targetRadius = maxRadius;
+
+  window.addEventListener("scroll", () => {
     latestScrollY = window.scrollY;
 
     if (!ticking) {
-        requestAnimationFrame(updateAnimation);
-        ticking = true;
+      requestAnimationFrame(updateAnimation);
+      ticking = true;
     }
-});
+  });
 
-function updateAnimation() {
+  function updateAnimation() {
+const windowHeight = window.innerHeight;
+const documentHeight = document.documentElement.scrollHeight;
+
+const isBottom =
+  windowHeight + latestScrollY >= documentHeight - 2;
+
+/* ======================
+   FOOTER ANIMATION
+====================== */
+
+if (isBottom) {
+  footer.style.transform = "translateY(0)";
+} else {
+  footer.style.transform = "translateY(100%)";
+}
+
+    /* ======================
+       PARALLAX TEXT
+    ====================== */
+
     const headMove = latestScrollY * 0.03;
     const subMove = latestScrollY * 0.02;
 
-    SpanUpHomeText.style.top = -10 + headMove + '%';
-    HeadText.style.top = 30 + headMove + '%';
-    HeadText.style.scale = 1 - (headMove / 100); // Scale up as text moves down
-    SubText.style.top = 54 + subMove + '%';
-    SubText.style.scale = 1 - (subMove / 80); // Scale down as text moves down
+    FunikInOverlay.style.top = latestScrollY * 0.005 + "rem";
 
+    overlayHutan1.style.bottom = latestScrollY * 0.03 + "rem";
+    overlayHutan2.style.bottom = latestScrollY * 0.025 + "rem";
 
-    ticking = false;
-}
+    SpanUpHomeText.style.top = -8 + headMove + "%";
 
+    HeadText.style.top = 30 + headMove + "%";
+    HeadText.style.opacity = 1 - headMove / 50;
+    HeadText.style.transform = `scale(${1 - headMove / 100})`;
 
-const maxRadius = 45;
-let currentRadius = maxRadius;
-let targetRadius = maxRadius;
+    SubText.style.top = 54 + subMove + "%";
+    SubText.style.opacity = 1 - headMove / 50;
+    SubText.style.transform = `scale(${1 - subMove / 80})`;
 
-window.addEventListener('scroll', () => {
-    const scrollY = window.scrollY;
+    /* ======================
+       BORDER RADIUS SMOOTH
+    ====================== */
 
-    targetRadius = Math.max(maxRadius - scrollY * 0.1, 0);
-});
-
-function animate() {
-    // easing smooth
+    targetRadius = Math.max(maxRadius - latestScrollY * 0.1, 0);
     currentRadius += (targetRadius - currentRadius) * 0.1;
 
-    pageTwo.style.borderRadius =
-        `${currentRadius}% ${currentRadius}% 0% 0%`;
+    pageTwo.style.borderRadius = `
+      ${currentRadius}% ${currentRadius}% 0% 0%
+    `;
 
-    requestAnimationFrame(animate);
-}
-
-animate();
-
+    ticking = false;
+  }
 });
+
 </script>
