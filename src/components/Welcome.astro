@@ -61,7 +61,7 @@ import { Image } from 'astro:assets';
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, quisquam. Illum id reiciendis, deserunt iste illo temporibus nam dolore quas eveniet, eos doloribus minus nesciunt iure, veritatis labore molestiae dolorum.
             </p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex jusitfy-center gap-3 shadow-lg rounded-lg p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex jusitfy-center gap-3 rounded-lg p-4">
             <div class="max-w-[40rem] flex flex-col items-center gap-3">
                 <i class="bx bx-globe text-5xl text-green-700"></i>
                 <h2 class="text-lg bg-gradient-to-t from-green-400 to-green-600 px-2 text-white w-fit font-semibold">Publish Pencapaianmu</h2>
@@ -116,19 +116,21 @@ import { Image } from 'astro:assets';
         <div class="relative w-full">
             <img id="overlayHutan1" src="/public/image/Hutan.png" class="z-[8] absolute bottom-[44rem] w-full opacity-20" alt="Hutan">
             <img id="overlayHutan2" src="/public/image/Hutan.png" class="z-[10] absolute bottom-[44rem] w-full " alt="Hutan">
-            <div class="z-[11] relative w-full bg-white h-[45rem] mt-[-14rem] rounded-b-lg"></div>
+            <div class="z-[11] p-5 relative w-full bg-white h-[45rem] mt-[-14rem] rounded-b-lg">
+                <div class="overflow-x-auto whitespace-nowrap rounded-xl select-none">
+                    <div class="gap-6 flex space-x-4">
+                        <div class="bg-gray-100 rounded-lg p-4 shadow-md max-w-md">
+                            <img src="https://source.unsplash.com/random/400x200" alt="News Image" class="w-full h-40 object-cover rounded-md mb-4">
+                            <h3 class="text-xl font-semibold mb-2">Pameran Seni Lampung</h3>
+                            <p class="text-gray-700 truncate">Lorem ipsum dolor siur adipiscing elit. Donec vel sapien augue.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!--  -->
-    <!-- <div class="overflow-x-auto whitespace-nowrap rounded-xl select-none">
-        <div class="gap-6 flex space-x-4">
-            <div class="bg-gray-100 rounded-lg p-4 shadow-md max-w-md">
-                <img src="https://source.unsplash.com/random/400x200" alt="News Image" class="w-full h-40 object-cover rounded-md mb-4">
-                <h3 class="text-xl font-semibold mb-2">Pameran Seni Lampung</h3>
-                <p class="text-gray-700 truncate">Lorem ipsum dolor siur adipiscing elit. Donec vel sapien augue.</p>
-            </div>
-        </div>
-    </div> -->
+
     <!--  -->
     
 </section>
@@ -193,7 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let latestScrollY = 0;
   let ticking = false;
 
-  const maxRadius = 45;
+  const maxRadius = 25;
   let currentRadius = maxRadius;
   let targetRadius = maxRadius;
 
