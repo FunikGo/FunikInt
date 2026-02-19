@@ -1,13 +1,9 @@
 ---
-import '../style/LibraryClass.css';
+import ErrorPage from "../components/ErrorPage.astro";
 ---
 
-<html>
-  <body class="flex items-center justify-center h-screen bg-black text-white">
-    <div class="text-center">
-      <h1 class="h1 font-bold mb-4">404</h1>
-      <p>Halaman tidak ditemukan</p>
-      <a href="/" class="underline mt-4 inline-block">Kembali ke Home</a>
-    </div>
-  </body>
-</html>
+<ErrorPage
+  code="404"
+  title="Halaman Tidak Ditemukan"
+  message="URL yang Anda cari tidak ditemukan. Mungkin sudah dihapus atau Anda salah mengetikkan alamatnya."
+/>

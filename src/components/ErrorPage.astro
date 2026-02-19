@@ -1,0 +1,68 @@
+---
+const {
+  code = "404",
+  title = "Terjadi Kesalahan",
+  message = "Sesuatu tidak berjalan dengan semestinya.",
+  showHome = true
+} = Astro.props;
+import '../style/LibraryClass.css';
+import Header from '../layouts/header.astro';
+---
+
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- CDN US -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!--  -->
+    <title>{code} - {title}</title>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-gray-100 text-gray-800">
+      <div class="text-center flex flex-col items-center">
+
+      <h1 class="text-7xl font-bold tracking-tight text-green-500 px-5 py-2 font-[TanGrandeur]">
+        {code}
+      </h1>
+
+      <h2 class="mt-4 text-2xl font-semibold  text-green-900 font-[TanGrandeur]">
+        {title}
+      </h2>
+
+      <p class="text-xs italic text-green-950/60 max-w-md mx-auto">
+        {message}
+      </p>
+
+      {showHome && (
+        <a href="/" class="inline-block mt-6 px-5 py-2 bg-gradient-to-b from-green-400 to-green-700  text-white hover:opacity-80 transition">
+          Kembali ke Beranda
+        </a>
+      )}
+
+    </div>
+
+  </body>
+</html>
+
+<style>
+	::-webkit-scrollbar{
+		display: none;
+	}
+	@font-face {
+		font-family: 'TanGrandeur';
+		src:url(../assets/TAN-Grandeur/TANGRANDEUR.ttf) format('truetype');
+		font-weight: normal;
+		font-style: normal;
+    }
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	}
