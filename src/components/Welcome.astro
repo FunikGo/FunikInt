@@ -21,7 +21,7 @@ import { Image } from 'astro:assets';
                 </a>
             </div>
         </div>
-        <h1 id="HeadText" class="font-[TanGrandeur] z-2 w-full max-w-[90%] md:max-w-[65rem] leading-[1.65] tracking-[0.04em] text-2xl md:text-6xl font-bold drop-shadow-lg absolute top-[30%] transition-all duration-500">
+        <h1 id="HeadText" class="font-[TanGrandeur] z-2 w-full max-w-[90%] md:max-w-[65rem] leading-[1.65] tracking-[0.04em] text-2xl md:text-6xl font-bold drop-shadow-lg absolute top transition-all duration-500">
             Celebrating Excellence, Inspiring the Future.
         </h1>
         <p id="SubText" class="hidden italic w-full max-w-[90%] md:max-w-[60%] text-lg md:text-xl drop-shadow-md absolute top-[54%] transition-all duration-500">
@@ -212,25 +212,21 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function updateAnimation() {
-const windowHeight = window.innerHeight;
-const documentHeight = document.documentElement.scrollHeight;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
 
-const isBottom =
-  windowHeight + latestScrollY >= documentHeight - 2;
-
-/* ======================
-   FOOTER ANIMATION
-====================== */
-
-if (isBottom) {
-  footer.style.transform = "translateY(0)";
-} else {
-  footer.style.transform = "translateY(100%)";
-}
+    const isBottom =
+    windowHeight + latestScrollY >= documentHeight - 2;
 
     /* ======================
-       PARALLAX TEXT
+    FOOTER ANIMATION
     ====================== */
+
+    if (isBottom) {
+    footer.style.transform = "translateY(0)";
+    } else {
+    footer.style.transform = "translateY(100%)";
+    }
 
     const headMove = latestScrollY * 0.03;
     const subMove = latestScrollY * 0.02;
@@ -240,9 +236,9 @@ if (isBottom) {
     overlayHutan1.style.bottom = latestScrollY * 0.04 + "rem";
     overlayHutan2.style.bottom = latestScrollY * 0.037 + "rem";
 
-    SpanUpHomeText.style.top = -14 + headMove * 1.3 + "%";
+    SpanUpHomeText.style.top = -16 + headMove * 1.3 + "%";
 
-    HeadText.style.top = 30 + headMove + "%";
+    HeadText.style.top = 40 + headMove + "%";
     HeadText.style.opacity = 1 - headMove / 50;
     HeadText.style.transform = `scale(${1 - headMove / 100})`;
 
